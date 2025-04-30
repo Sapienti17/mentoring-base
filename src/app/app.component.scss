@@ -167,7 +167,7 @@
 
 .content-container {
   width: 1320px;
-  margin: 0 auto 500px; //**** удалить "500px" после завершения верстки
+  margin: 0 auto;
 }
 
 .promo-block {
@@ -200,7 +200,6 @@
   }
 }
 
-
 .catalog {
   display: flex;
   flex-direction: column;
@@ -214,7 +213,6 @@
 
   &__grid {
     display: flex;
-
   }
 
   &__main-grid {
@@ -230,11 +228,10 @@
     padding: 16px;
     box-sizing: border-box;
     box-shadow: 0 20px 50px 0 #3c3c3b12;
-    background-image: url(../assets/img/catalog_main_img.png);
+    background-image: url("../assets/img/catalog_main_img.png");
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: left;
-
   }
 
   &-card {
@@ -251,7 +248,6 @@
     }
 
     &__title {
-
       font-size: 28px;
       font-weight: 600;
       color: #3C3C3B;
@@ -280,44 +276,39 @@
     }
 
     &--bg-1 {
-      background-image: url(../assets/img/catalog_card_img1.png);
+      background-image: url("../assets/img/catalog_card_img1.png");
       background-repeat: no-repeat;
       background-position-y: bottom;
       background-position-x: left;
     }
 
     &--bg-2 {
-      background-image: url(../assets/img/catalog_card_img2.png);
+      background-image: url("../assets/img/catalog_card_img2.png");
       background-repeat: no-repeat;
       background-position-y: bottom;
       background-position-x: right;
     }
 
     &--bg-3 {
-      background-image: url(../assets/img/catalog_card_img3.png);
+      background-image: url("../assets/img/catalog_card_img3.png");
       background-repeat: no-repeat;
       background-position-y: bottom;
       background-position-x: right;
     }
 
     &--bg-4 {
-      background-image: url(../assets/img/catalog_card_img4.png);
+      background-image: url("../assets/img/catalog_card_img4.png");
       background-repeat: no-repeat;
       background-position-y: bottom;
       background-position-x: left;
     }
-
-
   }
-
 
   &__subgrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
     gap: 28px;
-
-
   }
 }
 
@@ -331,11 +322,7 @@
     cursor: pointer;
 
     &--active {
-      color: #f0ba4e}
+      color: #f0ba4e
+    }
   }
 }
-
-
-
-
-

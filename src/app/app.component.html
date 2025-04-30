@@ -1,13 +1,11 @@
 <div class="container">
   <header class="header">
     <div class="header__left">
-      <a href="/" class="header__logo">
-        <img src="../assets/img/logo.svg" alt="Логотип">
-      </a>
+      <a href="/" class="header__logo"> <img src="../assets/img/logo.svg" alt="Логотип"> </a>
       <nav class="header__nav">
-        <a href="/" class="header__nav--item">Главная</a>
-        <a href="/" class="header__nav--item">О компании</a>
-        <a href="/" class="header__nav--item">Каталог</a>
+        <a href="/" class="header__nav--item">{{ mainTitle }}</a>
+        <a href="/" class="header__nav--item">{{ aboutTitle }}</a>
+        <a href="/" class="header__nav--item">{{ catalogTitle }}</a>
       </nav>
     </div>
     <div class="header__right">
@@ -15,12 +13,13 @@
         <img src="../assets/img/phone.svg" alt="Контактный номер">
         <p class="header__contacts--phone">+7 (965) 084-29-29</p>
       </a>
-      <a href="/" class="header__right--selected">
-        <img src="../assets/img/heart.svg" alt="Избранное">
-      </a>
+      <a href="/" class="header__right--selected"> <img
+        src="../assets/img/heart.svg"
+        alt="Избранное"> </a>
       <button class="header__right-button">
         <img src="../assets/img/shopping-cart.png" class="header__right-button-img" alt="Корзина">
-        Пусто</button>
+        Пусто
+      </button>
     </div>
   </header>
   <div class="header-subtitle">
@@ -30,18 +29,19 @@
           <img src="../assets/img/burger_menu.svg" alt="Каталог">
         </button>
         <div class="header-subtitle__nav">
-          <button class="header-subtitle-nav__link">Каталог</button>
-          <button class="header-subtitle-nav__link">Стройматериалы</button>
-          <button class="header-subtitle-nav__link">Инструменты</button>
-          <button class="header-subtitle-nav__link">Электрика</button>
-          <button class="header-subtitle-nav__link">Интерьер и одежда</button>
+          <button class="header-subtitle-nav__link">{{ subTitleListItem1 }}</button>
+          <button class="header-subtitle-nav__link">{{ subTitleListItem2 }}</button>
+          <button class="header-subtitle-nav__link">{{ subTitleListItem3 }}</button>
+          <button class="header-subtitle-nav__link">{{ subTitleListItem4 }}</button>
+          <button class="header-subtitle-nav__link">{{ subTitleListItem5 }}</button>
         </div>
       </div>
     </div>
     <div class="header-subtitle__search">
       <div class="header-subtitle__input">
-        <input class="header-subtitle-input__item" type="text"
-               placeholder="Поиск, например Круг зачистной ">
+        <input
+          class="header-subtitle-input__item" type="text"
+          placeholder="Поиск, например Круг зачистной ">
         <img class="header-subtitle__input--searchimg" src="../assets/img/search.svg" alt="Поиск">
       </div>
       <div class="header-subtitle__location">
@@ -59,25 +59,20 @@
         <img class="promo-block__img" src="../assets/img/bricks_promo.svg" alt="">
         <p class="promo-block__text">
           <span class="promo-block__text--black">Большой
-            ассортимент</span>
-          строительных материалов всегда в наличии
+            ассортимент</span> строительных материалов всегда в наличии
         </p>
       </div>
       <div class="promo-block__item">
         <img class="promo-block__img" src="../assets/img/delivery_promo.svg" alt="">
         <p class="promo-block__text">
           <span class="promo-block__text--black">Доставка
-            стройматериалов</span>
-          в течении четырех часов или в любое удобное время
+            стройматериалов</span> в течении четырех часов или в любое удобное время
         </p>
       </div>
       <div class="promo-block__item">
         <img class="promo-block__img" src="../assets/img/quality_promo.svg" alt="">
-        <p class="promo-block__text">Многоуровневая
-          <span class="promo-block__text--black">система
-            управления качеством</span> по стандарту
-          ISO 9001
-        </p>
+        <p class="promo-block__text">Многоуровневая <span class="promo-block__text--black">система
+            управления качеством</span> по стандарту ISO 9001 </p>
       </div>
     </div>
     <div class="catalog">
@@ -91,57 +86,49 @@
       <div class="catalog__grid">
         <div class="catalog__main-grid">
           <div class="catalog__main-card">
-              <h2 class="catalog-card__title">Строительный отделочный инструмент</h2>
-              <a href="/" class="catalog-card__link">Перейти в каталог
+            <h2 class="catalog-card__title">Строительный отделочный инструмент</h2>
+            <a href="/" class="catalog-card__link">Перейти в каталог
               <button class="catalog-card__btn">
                 <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
               </button>
-              </a>
-
+            </a>
           </div>
         </div>
         <div class="catalog__subgrid">
           <div class="catalog-card--small catalog-card--bg-1">
             <h2 class="catalog-card__title catalog-card__title--end">Эмали</h2>
             <a href="/" class="catalog-card__link">Перейти в каталог
-            <button class="catalog-card__btn">
-              <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
-            </button>
+              <button class="catalog-card__btn">
+                <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
+              </button>
             </a>
-
           </div>
           <div class="catalog-card--small catalog-card--bg-2">
             <h2 class="catalog-card__title">Лакокрасочные <br/>материалы</h2>
             <a href="/" class="catalog-card__link catalog-card__link--left">Перейти в каталог
-            <button class="catalog-card__btn">
-              <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
-            </button>
+              <button class="catalog-card__btn">
+                <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
+              </button>
             </a>
-
           </div>
           <div class="catalog-card--small catalog-card--bg-3">
             <h2 class="catalog-card__title">Пены, клеи и <br/>герметики</h2>
             <a href="/" class="catalog-card__link catalog-card__link--left">Перейти в каталог
-            <button class="catalog-card__btn">
-              <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
-            </button>
+              <button class="catalog-card__btn">
+                <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
+              </button>
             </a>
-
           </div>
           <div class="catalog-card--small catalog-card--bg-4">
             <h2 class="catalog-card__title">Розетки и выключатели</h2>
             <a href="/" class="catalog-card__link">Перейти в каталог
-            <button class="catalog-card__btn">
-              <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
-            </button>
+              <button class="catalog-card__btn">
+                <img src="../assets/img/catalog_link_arrow.svg" alt="arrow">
+              </button>
             </a>
           </div>
-          </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
