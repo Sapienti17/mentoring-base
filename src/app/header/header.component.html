@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="header__left">
+    <a href="/" class="header__logo"> <img ngSrc="./assets/img/logo.svg" alt="Логотип" height="40" width="61"> </a>
+    <nav class="header__nav">
+      <a href="/" class="header__nav--item">{{ mainTitle }}</a>
+      <a href="/" class="header__nav--item">{{ aboutCompany }}</a>
+      <a href="/" class="header__nav--item" *ngIf="isShowCatalog">{{ catalogTitle }}</a>
+      <!--      <button (click)="isShowCatalog = !isShowCatalog">Показать / Скрыть пункт</button>-->
+      <!--      <button (click)="changeMenuText()">Изменить текст</button>-->
+      <a routerLink="/users" class="header__nav--item">Пользователи</a>
+    </nav>
+  </div>
+  <div class="header__right">
+    <a href="/" class="header__right--contacts">
+      <img ngSrc="./assets/img/phone.svg" alt="Контактный номер" height="28" width="28">
+      <p class="header__contacts--phone">+7 (965) 084-29-29</p>
+    </a>
+    <a href="/" class="header__right--selected"> <img
+      ngSrc="./assets/img/heart.svg"
+      alt="Избранное" height="21" width="24"> </a>
+    <button class="header__right-button">
+      <img
+        ngSrc="./assets/img/shopping-cart.png"
+        class="header__right-button-img" alt="Корзина"
+        height="100"
+        width="100">
+      Пусто
+    </button>
+  </div>
+</header>
+<div class="header-subtitle">
+  <div class="header-subtitle__catalog">
+    <div class="header-subtitle__list">
+      <button class="header-subtitle-list__burger-menu">
+        <img ngSrc="./assets/img/burger_menu.svg" alt="Каталог" height="16" width="16">
+      </button>
+      <div class="header-subtitle__nav">
+        <button *ngFor="let item of menuItems" class="header-subtitle-nav__link">{{ item }}</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="header-subtitle__search">
+    <div class="header-subtitle__input">
+      <input
+        class="header-subtitle-input__item" type="text"
+        placeholder="Поиск, например Круг зачистной ">
+      <img
+        class="header-subtitle__input--searchImg"
+        ngSrc="./assets/img/search.svg"
+        alt="Поиск"
+        height="800"
+        width="800">
+    </div>
+    <div class="header-subtitle__location">
+      <img ngSrc="./assets/img/location.svg" alt="Локация" height="12" width="12">
+      <span class="header-subtitle__city">Москва</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="container">
+  <button (click)="isShowImage = !isShowImage">Показать / Скрыть баннер</button>
+  <div class="title-banner">
+    <img
+      *ngIf="isShowImage" class="title-banner-img"
+      ngSrc="./assets/img/banner.jpeg"
+      alt="Баннер"
+      height="720"
+      width="1920">
+  </div>
+  <div class="content-container">
+    <div class="promo-block">
+      <div class="promo-block__item">
+        <img class="promo-block__img" ngSrc="./assets/img/bricks_promo.svg" alt="" height="72" width="72">
+        <p class="promo-block__text">
+          <span class="promo-block__text--black">Большой
+            ассортимент</span> строительных материалов всегда в наличии
+        </p>
+      </div>
+      <div class="promo-block__item">
+        <img class="promo-block__img" ngSrc="./assets/img/delivery_promo.svg" alt="" height="72" width="72">
+        <p class="promo-block__text">
+          <span class="promo-block__text--black">Доставка
+            стройматериалов</span> в течении четырех часов или в любое удобное время
+        </p>
+      </div>
+      <div class="promo-block__item">
+        <img class="promo-block__img" ngSrc="./assets/img/quality_promo.svg" alt="" height="72" width="72">
+        <p class="promo-block__text">Многоуровневая <span class="promo-block__text--black">система
+            управления качеством</span> по стандарту ISO 9001 </p>
+      </div>
+    </div>
+    <div class="catalog">
+      <div class="catalog__pagination pagination">
+        <button *ngFor="let item of newPages" class="pagination__btn pagination__btn--active ">{{ item }}</button>
+      </div>
+      <div class="catalog__grid">
+        <div class="catalog__main-grid">
+          <div class="catalog__main-card">
+            <h2 class="catalog-card__title">Строительный отделочный инструмент</h2>
+            <a href="/" class="catalog-card__link">Перейти в каталог
+              <button class="catalog-card__btn">
+                <img ngSrc="./assets/img/catalog_link_arrow.svg" alt="arrow" height="8" width="21">
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="catalog__subgrid">
+          <div class="catalog-card--small catalog-card--bg-1">
+            <h2 class="catalog-card__title catalog-card__title--end">Эмали</h2>
+            <a href="/" class="catalog-card__link">Перейти в каталог
+              <button class="catalog-card__btn">
+                <img ngSrc="./assets/img/catalog_link_arrow.svg" alt="arrow" height="8" width="21">
+              </button>
+            </a>
+          </div>
+          <div class="catalog-card--small catalog-card--bg-2">
+            <h2 class="catalog-card__title">Лакокрасочные <br/>материалы</h2>
+            <a href="/" class="catalog-card__link catalog-card__link--left">Перейти в каталог
+              <button class="catalog-card__btn">
+                <img ngSrc="./assets/img/catalog_link_arrow.svg" alt="arrow" height="8" width="21">
+              </button>
+            </a>
+          </div>
+          <div class="catalog-card--small catalog-card--bg-3">
+            <h2 class="catalog-card__title">Пены, клеи и <br/>герметики</h2>
+            <a href="/" class="catalog-card__link catalog-card__link--left">Перейти в каталог
+              <button class="catalog-card__btn">
+                <img ngSrc="./assets/img/catalog_link_arrow.svg" alt="arrow" height="8" width="21">
+              </button>
+            </a>
+          </div>
+          <div class="catalog-card--small catalog-card--bg-4">
+            <h2 class="catalog-card__title">Розетки и выключатели</h2>
+            <a href="/" class="catalog-card__link">Перейти в каталог
+              <button class="catalog-card__btn">
+                <img ngSrc="./assets/img/catalog_link_arrow.svg" alt="arrow" height="8" width="21">
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
