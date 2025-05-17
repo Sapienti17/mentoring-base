@@ -1,11 +1,11 @@
 <div class="user-list__container">
-  <div class='user-list__items' *ngFor="let item of users">
-    <p>{{ item.name }}</p>
-    <p>{{ item.email }}</p>
-    <p>{{ item.address.city }}</p>
-    <p>{{ item.phone }}</p>
-    <p>{{ item.website }}</p>
-    <p>{{ item.company.name }}</p>
-    <button class="user-list__btn" (click)="deleteUser(item.id)">Удалить</button>
+  <div class='user-list__users' *ngFor="let user of users">
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.address.city }}</p>
+    <p>{{ user.phone }}</p>
+    <p>{{ user.website }}</p>
+    <p>{{ user.company.name }}</p>
+    <button class="user-list__btn" (click)="deleteUser(user.id)">Удалить</button>
   </div>
 </div>

@@ -1,28 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { NgFor, NgForOf } from '@angular/common';
+import { NgForOf } from '@angular/common';
 
 interface IUser {
-  'id': number,
-  'name': string,
-  'username': string,
-  'email': string,
-  'address': {
-    'street': string,
-    'suite': string,
-    'city': string,
-    'zipcode': string,
-    'geo': {
-      'lat': string,
-      'lng': string
+  id: number,
+  name: string,
+  username: string,
+  email: string,
+  address: {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: {
+      lat: string,
+      lng: string
     }
   }
-  'phone': string,
-  'website': string,
-  'company': {
-    'name': string,
-    'catchPhrase': string,
-    'bs': string
+  phone: string,
+  website: string,
+  company: {
+    name: string,
+    catchPhrase: string,
+    bs: string
   }
 }
 
@@ -39,18 +39,18 @@ export class UsersListComponent {
   title: string = 'users';
 
 
-  readonly apiService = inject(HttpClient);
+  readonly apiService: HttpClient = inject(HttpClient);
   users: IUser[] = [];
 
   constructor() {
     this.apiService.get<IUser[]>('https://jsonplaceholder.typicode.com/users').subscribe(
-      response => {
+      (response: IUser[]) => {
         this.users = response;
       },
     )
   }
 
   deleteUser(id: number) {
-    this.users = this.users.filter(user => user.id !== id);
+    this.users = this.users.filter((user: IUser): boolean => user.id !== id);
   }
 }
