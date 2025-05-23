@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="title">Домашнее задание 8 урока - Задачи по массивам</h1>
+
+  <h3 class="h3">1. Преобразовать данные из
+    <a class="link" target="_blank" href="https://jsonplaceholder.typicode.com/users">"https://jsonplaceholder.typicode
+      .com/users"</a> к виду чтобы у каждого пользователя отобразить только id и username</h3>
+  <ul>
+    <li *ngFor="let user of users">
+      id: {{ user.id }}
+      username: {{ user.username }}
+    </li>
+  </ul>
+
+  <h3 class="h3"> 2. Получить из данных выше список всех эмейлов</h3>
+  <ol>
+    <li *ngFor="let user of users">{{ user.email }}</li>
+  </ol>
+
+  <h3 class="h3">3. Вывести пользователя с id === 9</h3>
+  <p>Id: {{ idNumber?.id }} {{ idNumber?.name }}</p>
+
+  <h3 class="h3">4. Вывести всех пользователей из города 'Lebsackbury'</h3>
+  <p>city: {{ cityLebsackbury?.address?.city }}, user: {{ cityLebsackbury?.name }}</p>
+
+  <h3 class="h3">5. Вывести первых 5 пользователей</h3>
+  <ol>
+    <li *ngFor="let fiveUser of firstFiveUsers">{{ fiveUser }}</li>
+  </ol>
+
+  <h3 class="h3">6. Вывести всех пользователей в обратном порядке</h3>
+  <ol>
+    <li *ngFor="let reverseUser of reverseUsers">{{ reverseUser }}</li>
+  </ol>
+
+  <h3 class="h3">7. Посчитать сколько всего пользователей</h3>
+  <p>Количество пользователей: {{ usersLength }}</p>
+
+  <h3 class="h3">8. Вывести список вебсайтов пользователей которые содержат '.com'</h3>
+  <li *ngFor="let userSite of usersWithSiteCom">{{ userSite }}</li>
+
+  <h3 class="h3">9. Вывести все username которые длиннее 12 символов</h3>
+  <li *ngFor="let users of namelengthTwelve">{{ users.username }}</li>
+
+  <h3 class="h3">10. Привести список всех username где каждый будет в нижнем регистре</h3>
+  <ol>
+    <li *ngFor="let user of userToLowerCase">{{ user }}</li>
+  </ol>
+</div>
