@@ -1,0 +1,8 @@
+<div class="todo-list__container">
+  <div class="todo-list__items" *ngFor="let todos of todos">
+    <p>Текст задачи: {{ todos.title }}</p>
+    <p>Автор задачи: {{ todos.id }}</p>
+    <p>Задача завершена: {{ todos.completed }}</p>
+    <button class="todo-list__btn" (click)="deleteTodo(todos.id)">Удалить</button>
+  </div>
+</div>
