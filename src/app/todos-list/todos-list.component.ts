@@ -25,8 +25,6 @@ export class TodosListComponent {
   }
 
   deleteTodo(id: number) {
-    this.todos = this.todos.filter((todo: ITodo): boolean => todo.id !== id);
-
+    this.todos = this.todos.filter((todo: ITodo) => todo.id !== id);
   }
-
 }

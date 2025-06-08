@@ -22,7 +22,7 @@ export class UsersListComponent {
   constructor() {
     this.usersApiService.getUsers().subscribe((response: IUser[]) => {
       this.users = response;
-    });
+    })
   }
 
   deleteUser(id: number) {
