@@ -1,1 +1,9 @@
-<p>todo-card works!</p>
+<div class="todo-list__items">
+  <div>Текст задачи:</div>
+  <p>{{ todo.title }}</p>
+  <div>Автор задачи:</div>
+  <p>{{ todo.userId }}</p>
+  <div>Задача завершена:</div>
+  <p>{{ todo.completed }}</p>
+  <button class="todo-list__btn" (click)="onDeleteTodo(todo.id)">Удалить</button>
+</div>

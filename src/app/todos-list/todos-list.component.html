@@ -1,8 +1,5 @@
 <div class="todo-list__container">
-  <div class="todo-list__items" *ngFor="let todo of todos">
-    <p>Текст задачи: {{ todo.title }}</p>
-    <p>Автор задачи: {{ todo.id }}</p>
-    <p>Задача завершена: {{ todo.completed }}</p>
-    <button class="todo-list__btn" (click)="deleteTodo(todo.id)">Удалить</button>
+  <div *ngFor="let todo of todos">
+    <app-todo-card [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
   </div>
 </div>

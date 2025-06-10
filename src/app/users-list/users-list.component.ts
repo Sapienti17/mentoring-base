@@ -3,13 +3,14 @@ import { Component, inject } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { UsersApiService } from '../users-api.service';
 import { IUser } from '../Interfaces/user.interface';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @Component({
   selector: 'users-list',
   standalone: true,
   templateUrl: 'users-list.component.html',
   styleUrls: ['users-list.component.scss'],
-  imports: [NgForOf],
+  imports: [NgForOf, UserCardComponent],
 })
 export class UsersListComponent {
   title: string = 'users';
