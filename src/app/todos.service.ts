@@ -6,7 +6,7 @@ import { ITodo } from './Interfaces/todo.interface';
 
 
 export class TodosService {
-  todoSubject$: BehaviorSubject<ITodo[]> = new BehaviorSubject<ITodo[]>([])
+  readonly todoSubject$: BehaviorSubject<ITodo[]> = new BehaviorSubject<ITodo[]>([])
 
   setTodo(todos: ITodo[]) {
     this.todoSubject$.next(todos)
@@ -14,13 +14,8 @@ export class TodosService {
 
   editTodo(editedTodo: ITodo) {
     this.todoSubject$.next(this.todoSubject$.value.map(
-      (todo: ITodo): ITodo => {
-        if ( todo.id === editedTodo.id ) {
-          return editedTodo
-        } else {
-          return todo
-        }
-      }))
+      (todo: ITodo): ITodo => todo.id === editedTodo.id ? editedTodo : todo,
+    ))
   }
 
   createTodo(todo: ITodo) {
@@ -29,7 +24,7 @@ export class TodosService {
 
   deleteTodo(id: number) {
     this.todoSubject$.next(this.todoSubject$.value.filter(
-      (todo: ITodo): boolean => todo.id !== id,
+      (todo: ITodo) => todo.id !== id,
     ))
   }
 }

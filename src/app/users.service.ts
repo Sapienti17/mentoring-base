@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 
 export class UsersService {
-  usersSubject$: BehaviorSubject<IUser[]> = new BehaviorSubject<IUser[]>([])
+  readonly usersSubject$: BehaviorSubject<IUser[]> = new BehaviorSubject<IUser[]>([])
 
   setUsers(users: IUser[]) {
     this.usersSubject$.next(users)
@@ -13,13 +13,7 @@ export class UsersService {
 
   editUsers(editedUser: IUser) {
     this.usersSubject$.next(this.usersSubject$.value.map(
-      user => {
-        if ( user.id === editedUser.id ) {
-          return editedUser
-        } else {
-          return user
-        }
-      },
+      (user: IUser) => user.id === editedUser.id ? editedUser : user,
     ))
   }
 
@@ -28,6 +22,6 @@ export class UsersService {
   }
 
   deleteUser(id: number) {
-    this.usersSubject$.next(this.usersSubject$.value.filter((user: IUser): boolean => user.id !== id));
+    this.usersSubject$.next(this.usersSubject$.value.filter((user: IUser) => user.id !== id));
   }
 }
