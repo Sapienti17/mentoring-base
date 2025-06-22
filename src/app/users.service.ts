@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { IUser } from './Interfaces/user.interface';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 
 export class UsersService {
-  readonly usersSubject$: BehaviorSubject<IUser[]> = new BehaviorSubject<IUser[]>([])
+  private readonly usersSubject$: BehaviorSubject<IUser[]> = new BehaviorSubject<IUser[]>([])
+  users: Observable<IUser[]> = this.usersSubject$.asObservable()
 
   setUsers(users: IUser[]) {
     this.usersSubject$.next(users)
