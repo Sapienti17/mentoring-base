@@ -23,7 +23,7 @@ export class UsersService {
       (currentUser: IUser) => currentUser.email === user.email,
     )
 
-    if ( existingUser !== undefined ) {
+    if ( existingUser ) {
       alert('Пользователь с таким Email уже зарегистрирован')
     } else {
       this.usersSubject$.next([user, ...this.usersSubject$.value])

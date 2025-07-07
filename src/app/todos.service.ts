@@ -21,10 +21,10 @@ export class TodosService {
 
   createTodo(todo: ITodo) {
     const existingTodo: ITodo | undefined = this.todoSubject$.value.find(
-      (currentToto) => currentToto.title === todo.title,
+      (currentTodo: ITodo) => currentTodo.title === todo.title,
     )
 
-    if ( existingTodo !== undefined ) {
+    if ( existingTodo ) {
       alert('Такая задача уже создана')
     } else {
       this.todoSubject$.next([todo, ...this.todoSubject$.value])
