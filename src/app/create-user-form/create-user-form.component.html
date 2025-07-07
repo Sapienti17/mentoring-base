@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Создание пользователя</h1>
+  <form class="form" [formGroup]="userForm" (ngSubmit)="formSubmit()">
+    <label>Имя:</label>
+    <input class="form__input" type="text" formControlName="name">
+    @if (userForm.controls.name.invalid && (userForm.controls.name.dirty || userForm.controls.name.touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Почта:</label>
+    <input class="form__input" type="text" formControlName="email">
+    @if (userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Город:</label>
+    <div formGroupName="address">
+      <input class="form__input" type="text" formControlName="city">
+      @if (userForm.controls.address.invalid &&
+      (userForm.controls.address.dirty || userForm.controls.address.touched)) {
+        <small class="form__input--error">Обязательное поле</small>
+      }
+    </div>
+    <label>Телефон:</label>
+    <input class="form__input" type="text" formControlName="phone">
+    @if (userForm.controls.phone.invalid && (userForm.controls.phone.dirty || userForm.controls.phone.touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Веб-сайт:</label>
+    <input class="form__input" type="text" formControlName="website">
+    @if (userForm.controls.website.invalid && (userForm.controls.website.dirty || userForm.controls.website.touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Компания:</label>
+    <div formGroupName="company">
+      <input class="form__input" type="text" formControlName="name">
+      @if (userForm.controls.company.invalid && (userForm.controls.company.dirty || userForm.controls.company.touched)) {
+        <small class="form__input--error">Обязательное поле</small>
+      }
+    </div>
+    <button class="form__btn" [disabled]="userForm.invalid">Добавить пользователя</button>
+  </form>
+</div>
