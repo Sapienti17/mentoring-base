@@ -1,41 +1,46 @@
 <div class="container">
   <h1>Создание пользователя</h1>
-  <form class="form" [formGroup]="userForm" (ngSubmit)="formSubmit()">
-    <label>Имя:</label>
-    <input class="form__input" type="text" formControlName="name">
-    @if (userForm.controls.name.invalid && (userForm.controls.name.dirty || userForm.controls.name.touched)) {
-      <small class="form__input--error">Обязательное поле</small>
-    }
-    <label>Почта:</label>
-    <input class="form__input" type="text" formControlName="email">
-    @if (userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)) {
-      <small class="form__input--error">Обязательное поле</small>
-    }
-    <label>Город:</label>
-    <div formGroupName="address">
-      <input class="form__input" type="text" formControlName="city">
-      @if (userForm.controls.address.invalid &&
-      (userForm.controls.address.dirty || userForm.controls.address.touched)) {
-        <small class="form__input--error">Обязательное поле</small>
-      }
-    </div>
-    <label>Телефон:</label>
-    <input class="form__input" type="text" formControlName="phone">
-    @if (userForm.controls.phone.invalid && (userForm.controls.phone.dirty || userForm.controls.phone.touched)) {
-      <small class="form__input--error">Обязательное поле</small>
-    }
-    <label>Веб-сайт:</label>
-    <input class="form__input" type="text" formControlName="website">
-    @if (userForm.controls.website.invalid && (userForm.controls.website.dirty || userForm.controls.website.touched)) {
-      <small class="form__input--error">Обязательное поле</small>
-    }
-    <label>Компания:</label>
-    <div formGroupName="company">
-      <input class="form__input" type="text" formControlName="name">
-      @if (userForm.controls.company.invalid && (userForm.controls.company.dirty || userForm.controls.company.touched)) {
-        <small class="form__input--error">Обязательное поле</small>
-      }
-    </div>
-    <button class="form__btn" [disabled]="userForm.invalid">Добавить пользователя</button>
+  <form class="form" [formGroup]="userForm">
+
+    <mat-form-field>
+      <mat-label>Имя:</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>Введите не менее 2-х символов</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Почта:</mat-label>
+      <input matInput formControlName="email">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Город:</mat-label>
+      <div formGroupName="address">
+        <input matInput formControlName="city">
+      </div>
+      <mat-error>Введите не менее 2-х символов</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Телефон:</mat-label>
+      <input matInput formControlName="phone">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Веб-сайт:</mat-label>
+      <input matInput formControlName="website">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Компания:</mat-label>
+      <div formGroupName="company">
+        <input matInput formControlName="name">
+      </div>
+      <mat-error>Введите не менее 3-х символов</mat-error>
+    </mat-form-field>
+    <button
+      class="form__btn"
+      type="submit"
+      (click)="formSubmit()"
+      [disabled]="userForm.invalid">Добавить пользователя
+    </button>
   </form>
 </div>
