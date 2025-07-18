@@ -1,25 +1,24 @@
 <div class="container">
   <h1>Создание задачи</h1>
-
-  <form class="form" [formGroup]="todoForm">
-    <mat-form-field>
-      <mat-label>Текст задачи</mat-label>
-      <input matInput formControlName="title">
-      <mat-error>Введите не менее 3-х символов</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Автор задачи:</mat-label>
-      <input matInput formControlName="userId">
-      <mat-error>Введите не менее 4-х символов</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Задача выполнена:</mat-label>
-      <input matInput formControlName="completed">
-      <mat-error>Введите "Да" или "Нет"</mat-error>
-    </mat-form-field>
-
-    <button type="submit" (click)="todoSubmit()" mat-button class="form__btn" [disabled]="todoForm.invalid">Добавить
-      задачу
-    </button>
+  <form class="form" [formGroup]="todoForm" (ngSubmit)="todoSubmit()">
+    <label>Текст задачи:</label>
+    <input class="form__input" type="text" formControlName="title">
+    @if (this.todoForm.controls['title'].invalid && (this.todoForm.controls['title'].dirty || this.todoForm.controls['title'].touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Автор задачи:</label>
+    <input class="form__input" type="text" formControlName="userId">
+    @if (this.todoForm.controls['userId'].invalid && (this.todoForm.controls['userId'].dirty || this.todoForm.controls['userId'].touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <label>Статус задачи</label>
+    <select class="form__input" formControlName="completed">
+      <option value="Да">Да</option>
+      <option value="Нет">Нет</option>
+    </select>
+    @if (this.todoForm.controls['completed'].invalid && (this.todoForm.controls['completed'].dirty || this.todoForm.controls['completed'].touched)) {
+      <small class="form__input--error">Обязательное поле</small>
+    }
+    <button class="form__btn" [disabled]="todoForm.invalid">Добавить задачу</button>
   </form>
 </div>

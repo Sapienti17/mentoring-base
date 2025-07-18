@@ -1,18 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IUser } from '../Interfaces/user.interface';
-import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-create-user-form',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    MatFormField,
-    MatLabel,
-    MatError,
-    MatInput,
   ],
   templateUrl: './create-user-form.component.html',
   styleUrl: './create-user-form.component.scss',
