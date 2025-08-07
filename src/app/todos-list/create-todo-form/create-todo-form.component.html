@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Создание задачи</h1>
+
+  <form class="form" [formGroup]="todoForm">
+
+    <mat-form-field>
+      <mat-label>Текст задачи</mat-label>
+      <input matInput formControlName="title">
+      <mat-error>Введите не менее 3-х символов</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Автор задачи:</mat-label>
+      <input matInput formControlName="userId">
+      <mat-error>Введите не менее 4-х символов</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Задача выполнена:</mat-label>
+      <mat-select formControlName="completed">
+        <mat-option value="Да">Да</mat-option>
+        <mat-option value="Нет">Нет</mat-option>
+      </mat-select>
+      <mat-error>Введите "Да" или "Нет"</mat-error>
+    </mat-form-field>
+
+    <button type="submit" (click)="todoSubmit()" mat-button class="form__btn" [disabled]="todoForm.invalid">Добавить
+      задачу
+    </button>
+
+  </form>
+</div>

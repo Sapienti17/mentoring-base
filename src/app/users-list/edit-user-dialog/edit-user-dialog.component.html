@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Редактирование пользователя</h1>
+  <form class="form" [formGroup]="editingUserForm">
+
+    <mat-form-field>
+      <mat-label>Имя:</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>Введите не менее 2-х символов</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Почта:</mat-label>
+      <input matInput formControlName="email">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Город:</mat-label>
+      <div formGroupName="address">
+        <input matInput formControlName="city">
+      </div>
+      <mat-error>Введите не менее 2-х символов</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Телефон:</mat-label>
+      <input matInput formControlName="phone">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Веб-сайт:</mat-label>
+      <input matInput formControlName="website">
+      <mat-error>Обязательное поле</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Компания:</mat-label>
+      <div formGroupName="company">
+        <input matInput formControlName="name">
+      </div>
+      <mat-error>Введите не менее 3-х символов</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button class="form__btn" type="submit" [mat-dialog-close]="UserWithUpdatedFields">Сохранить
+    </button>
+
+  </form>
+</div>

@@ -4,7 +4,8 @@ import { UsersApiService } from '../users-api.service';
 import { IUser } from '../Interfaces/user.interface';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UsersService } from '../users.service';
-import { CreateUserFormComponent } from '../create-user-form/create-user-form.component';
+import { CreateUserFormComponent } from './create-user-form/create-user-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'users-list',
@@ -20,7 +21,7 @@ export class UsersListComponent {
   readonly usersApiService: UsersApiService = inject(UsersApiService);
   readonly usersService: UsersService = inject(UsersService)
 
-  constructor() {
+  constructor(private snackBar: MatSnackBar) {
     this.usersApiService.getUsers().subscribe((response: IUser[]) => {
       this.usersService.setUsers(response);
     })
@@ -35,10 +36,25 @@ export class UsersListComponent {
       phone: event.phone,
       website: event.website,
       company: event.company,
+    });
+    this.snackBar.open('Пользователь создан!', 'Ок', {
+      duration: 2000,
     })
   }
 
   public deleteUser(id: number) {
     this.usersService.deleteUser(id);
+    this.snackBar.open('Пользователь удалён!', 'Ок', {
+      duration: 2000,
+    })
+  }
+
+  public editUser(user: IUser) {
+    if ( user ) {
+      this.usersService.editUsers(user);
+      this.snackBar.open('Пользователь сохранён!', 'Ок', {
+        duration: 2000,
+      })
+    }
   }
 }

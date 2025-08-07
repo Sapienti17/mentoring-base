@@ -4,7 +4,8 @@ import { AsyncPipe, NgForOf } from '@angular/common';
 import { ITodo } from '../Interfaces/todo.interface';
 import { TodoApiService } from '../todos-api.service';
 import { TodosService } from '../todos.service';
-import { CreateTodoFormComponent } from '../create-todo-form/create-todo-form.component';
+import { CreateTodoFormComponent } from './create-todo-form/create-todo-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-todos-list',
@@ -19,7 +20,7 @@ export class TodosListComponent {
   readonly todoApiService: TodoApiService = inject(TodoApiService);
   readonly todosService: TodosService = inject(TodosService)
 
-  constructor() {
+  constructor(private snackBar: MatSnackBar) {
     this.todoApiService.getUsers().subscribe(
       (response: ITodo[]) => {
         this.todosService.setTodo(response)
@@ -28,15 +29,30 @@ export class TodosListComponent {
   }
 
   public createTodo(event: ITodo) {
-    this.todosService.createTodo({
+    const newTodo = {
       id: new Date().getTime(),
-      userId: event.userId,
       title: event.title,
+      userId: event.userId,
       completed: event.completed,
+    };
+    this.todosService.createTodo(newTodo);
+    this.snackBar.open('Задача создана!', 'Ок', {
+      duration: 2000,
     })
   }
 
   public deleteTodo(id: number) {
     this.todosService.deleteTodo(id);
+    this.snackBar.open('Задача успешно удалена!', 'Ок', {
+      duration: 2000,
+    })
+  }
+
+  public editTodo(todo: ITodo) {
+    this.todosService.editTodo(todo)
+    this.snackBar.open('Задача сохранена', 'Ок', {
+      duration: 2000,
+    })
+
   }
 }

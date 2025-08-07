@@ -6,4 +6,5 @@
   <div>Задача завершена:</div>
   <p>{{ todo.completed ? "Да" : "Нет" }}</p>
   <button class="todo-list__btn" (click)="onDeleteTodo(todo.id)">Удалить</button>
+  <button class="todo-list__btn" (click)="showTodoDialog()">Редактировать</button>
 </div>
