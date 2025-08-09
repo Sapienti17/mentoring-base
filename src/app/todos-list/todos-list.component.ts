@@ -19,9 +19,8 @@ export class TodosListComponent {
 
   readonly todoApiService: TodoApiService = inject(TodoApiService);
   readonly todosService: TodosService = inject(TodosService)
-  readonly snackBar: MatSnackBar = inject(MatSnackBar)
 
-  constructor() {
+  constructor(private snackBar: MatSnackBar) {
     this.todoApiService.getUsers().subscribe(
       (response: ITodo[]) => {
         this.todosService.setTodo(response)
