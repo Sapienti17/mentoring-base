@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
+import { DatePipe, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 
@@ -17,6 +17,7 @@ const menuAboutCompany: string = returnMenuItem('О компании');
     NgIf,
     NgOptimizedImage,
     RouterLink,
+    DatePipe,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -31,6 +32,8 @@ export class HeaderComponent {
   isUpperCase: boolean = true;
 
   menuItems: string[] = ['Каталог', 'Строительные материалы', 'Инструменты', 'Электрика', 'Интерьер и одежда']
+
+  date: string = new Date().toLocaleString()
 
   changeMenuText() {
     this.menuItems = this.menuItems.map((item: string) => this.isUpperCase ? item.toLowerCase() : item.toUpperCase())

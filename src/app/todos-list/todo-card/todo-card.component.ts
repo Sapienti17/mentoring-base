@@ -3,12 +3,16 @@ import { ITodo } from '../../Interfaces/todo.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 import { DeleteTodoDialogComponent } from '../delete-todo-dialog/delete-todo-dialog.component';
+import { LimitCharsPipe } from '../todo-pipe/todo-pipe.component';
 
 @Component({
   selector: 'app-todo-card',
   standalone: true,
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
+  imports: [
+    LimitCharsPipe,
+  ],
 })
 export class TodoCardComponent {
   @Input()
@@ -21,7 +25,7 @@ export class TodoCardComponent {
   editTodo: EventEmitter<ITodo> = new EventEmitter<ITodo>();
 
   readonly matDialog: MatDialog = inject(MatDialog)
-  
+
   showTodoDialog() {
     this.matDialog.open(EditTodoDialogComponent, {
       data: { todo: this.todo },

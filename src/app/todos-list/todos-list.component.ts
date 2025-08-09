@@ -54,6 +54,5 @@ export class TodosListComponent {
     this.snackBar.open('Задача сохранена', 'Ок', {
       duration: 2000,
     })
-
   }
 }

@@ -1,6 +1,6 @@
 <div class="todo-list__items">
   <div>Текст задачи:</div>
-  <p>{{ todo.title }}</p>
+  <p>{{ todo.title | limitCharsPipe }}</p>
   <div>Автор задачи:</div>
   <p>{{ todo.userId }}</p>
   <div>Задача завершена:</div>
