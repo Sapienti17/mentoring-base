@@ -20,8 +20,9 @@ export class UsersListComponent {
 
   readonly usersApiService: UsersApiService = inject(UsersApiService);
   readonly usersService: UsersService = inject(UsersService)
+  readonly snackBar: MatSnackBar = inject(MatSnackBar)
 
-  constructor(private snackBar: MatSnackBar) {
+  constructor() {
     this.usersApiService.getUsers().subscribe((response: IUser[]) => {
       this.usersService.setUsers(response);
     })
@@ -50,7 +51,7 @@ export class UsersListComponent {
   }
 
   public editUser(user: IUser) {
-    if ( user ) {
+    if (user) {
       this.usersService.editUsers(user);
       this.snackBar.open('Пользователь сохранён!', 'Ок', {
         duration: 2000,

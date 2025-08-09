@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { ITodo } from '../../Interfaces/todo.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
@@ -20,13 +20,13 @@ export class TodoCardComponent {
   @Output()
   editTodo: EventEmitter<ITodo> = new EventEmitter<ITodo>();
 
-  constructor(private matDialog: MatDialog) {}
-
+  readonly matDialog: MatDialog = inject(MatDialog)
+  
   showTodoDialog() {
     this.matDialog.open(EditTodoDialogComponent, {
       data: { todo: this.todo },
     }).afterClosed().subscribe((todoResult: ITodo) => {
-      if ( todoResult ) {
+      if (todoResult) {
         this.editTodo.emit(todoResult)
       }
     })
@@ -34,8 +34,8 @@ export class TodoCardComponent {
 
   onDeleteTodo(id: number) {
     this.matDialog.open(DeleteTodoDialogComponent).afterClosed().subscribe((result: boolean) => {
-      if ( result ) {
-        if ( this.todo.id !== undefined ) {
+      if (result) {
+        if (this.todo.id) {
           this.deleteTodo.emit(id);
         }
       }

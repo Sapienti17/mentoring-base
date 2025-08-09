@@ -20,8 +20,8 @@ export class UserCardComponent {
   @Output()
   editUser: EventEmitter<IUser> = new EventEmitter()
 
-  constructor(private matDialog: MatDialog) {}
-
+  readonly matDialog: MatDialog = inject(MatDialog)
+  
   showUserDialog() {
     this.matDialog.open(EditUserDialogComponent, {
       data: { user: this.user },
