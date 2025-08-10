@@ -30,7 +30,7 @@ export class TodoCardComponent {
     this.matDialog.open(EditTodoDialogComponent, {
       data: { todo: this.todo },
     }).afterClosed().subscribe((todoResult: ITodo) => {
-      if ( todoResult ) {
+      if (todoResult) {
         this.editTodo.emit(todoResult)
       }
     })
@@ -38,8 +38,8 @@ export class TodoCardComponent {
 
   onDeleteTodo(id: number) {
     this.matDialog.open(DeleteTodoDialogComponent).afterClosed().subscribe((result: boolean) => {
-      if ( result ) {
-        if ( this.todo.id !== undefined ) {
+      if (result) {
+        if (this.todo.id) {
           this.deleteTodo.emit(id);
         }
       }
