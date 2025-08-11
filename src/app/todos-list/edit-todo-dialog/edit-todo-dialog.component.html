@@ -24,8 +24,9 @@
       <mat-error>Введите "Да" или "Нет"</mat-error>
     </mat-form-field>
 
-    <button type="submit" mat-button class="form__btn" [mat-dialog-close]="todoWithUpdatedFields">Сохранить
-      задачу
+    <button
+      matTooltip="Редактировать данные задачи" type="submit" mat-button class="form__btn"
+      [mat-dialog-close]="todoWithUpdatedFields">Редактировать
     </button>
 
   </form>

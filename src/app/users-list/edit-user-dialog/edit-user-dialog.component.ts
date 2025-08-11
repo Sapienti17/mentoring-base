@@ -4,6 +4,7 @@ import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-user-dialog',
@@ -20,6 +21,7 @@ import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatButton,
     MatDialogClose,
+    MatTooltip,
   ],
 })
 

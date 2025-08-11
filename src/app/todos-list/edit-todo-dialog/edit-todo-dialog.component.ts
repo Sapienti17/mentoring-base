@@ -11,6 +11,7 @@ import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { ITodo } from '../../Interfaces/todo.interface';
 import { MatOption, MatSelect } from '@angular/material/select';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-edit-todo-dialog',
@@ -26,6 +27,7 @@ import { MatOption, MatSelect } from '@angular/material/select';
     MatDialogClose,
     MatSelect,
     MatOption,
+    MatTooltip,
   ],
   templateUrl: './edit-todo-dialog.component.html',
   styleUrl: './edit-todo-dialog.component.scss',

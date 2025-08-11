@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 import { DeleteTodoDialogComponent } from '../delete-todo-dialog/delete-todo-dialog.component';
 import { LimitCharsPipe } from '../todo-pipe/todo-pipe.component';
+import { CardShadowDirective } from '../../Directives/card-shadow.directive';
 
 @Component({
   selector: 'app-todo-card',
@@ -12,6 +13,7 @@ import { LimitCharsPipe } from '../todo-pipe/todo-pipe.component';
   styleUrl: './todo-card.component.scss',
   imports: [
     LimitCharsPipe,
+    CardShadowDirective,
   ],
 })
 export class TodoCardComponent {

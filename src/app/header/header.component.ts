@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DatePipe, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ButtonDirective } from '../Directives/button.directive';
 
 
 const returnMenuItem: (item: string) => string = (item: string): string => {
@@ -18,6 +19,7 @@ const menuAboutCompany: string = returnMenuItem('О компании');
     NgOptimizedImage,
     RouterLink,
     DatePipe,
+    ButtonDirective,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
