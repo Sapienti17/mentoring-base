@@ -10,8 +10,8 @@
       <a routerLink="/users" class="header__nav--item">Пользователи</a>
       <!--<a routerLink="/lesson8" class="header__nav--item">Решения 8 урок</a>-->
       <a routerLink="/todo" class="header__nav--item">Todo</a>
+      <a routerLink="/admin" *ngIf="authService.isAdmin" class="header__nav--item">Админ</a>
       <span class="header__nav--item">{{ date | date: "medium" }}</span>
-
     </nav>
   </div>
   <div class="header__right">
@@ -24,12 +24,19 @@
       alt="Избранное" height="21" width="24"> </a>
     <button appButtonHover class="header__right-button">
       <img
-
         ngSrc="./assets/img/shopping-cart.png"
         class="header__right-button-img" alt="Корзина"
         height="100"
         width="100">
       Пусто
+    </button>
+    <button
+      class="header__right-button" appButtonHover *ngIf="(authService.user$ | async) === null"
+      (click)="showAuthDialog()">Войти
+    </button>
+    <button
+      class="header__right-button" appButtonHover *ngIf="(authService.user$ | async) !== null"
+      (click)="logout()">Выйти
     </button>
   </div>
 </header>
@@ -41,7 +48,6 @@
       </button>
       <div class="header-subtitle__nav">
         <button *ngFor="let item of menuItems" class="header-subtitle-nav__link">{{ item }}</button>
-
       </div>
     </div>
   </div>
