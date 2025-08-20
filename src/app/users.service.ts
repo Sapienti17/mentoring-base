@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUser } from './Interfaces/user.interface';
+import { IUser } from './Interfaces/IUser';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -23,7 +23,7 @@ export class UsersService {
       (currentUser: IUser) => currentUser.email === user.email,
     )
 
-    if ( existingUser ) {
+    if (existingUser) {
       alert('Пользователь с таким Email уже зарегистрирован')
     } else {
       this.usersSubject$.next([user, ...this.usersSubject$.value])

@@ -63,7 +63,8 @@ export class HeaderComponent {
   }
 
   public logout() {
-    if (confirm('Вы точно хотите выйти?')) {
+    const isLogoutConfirmed: boolean = confirm('Вы точно хотите выйти?')
+    if (isLogoutConfirmed) {
       this.authService.logout()
       this.router.navigate(['/'])
     }

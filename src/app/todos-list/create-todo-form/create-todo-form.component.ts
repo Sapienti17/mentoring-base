@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ITodo } from '../../Interfaces/todo.interface';
+import { ITodo } from '../../Interfaces/ITodo';
 import { MatButtonModule } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';

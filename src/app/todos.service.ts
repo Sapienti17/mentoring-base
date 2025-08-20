@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ITodo } from './Interfaces/todo.interface';
+import { ITodo } from './Interfaces/ITodo';
 
 @Injectable({ providedIn: 'root' })
 
@@ -24,7 +24,7 @@ export class TodosService {
       (currentTodo: ITodo) => currentTodo.title === todo.title,
     )
 
-    if ( existingTodo ) {
+    if (existingTodo) {
       alert('Такая задача уже создана')
     } else {
       this.todoSubject$.next([todo, ...this.todoSubject$.value])

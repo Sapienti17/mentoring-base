@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAuthUser } from './Interfaces/authUser.interface';
+import { IAuthUser } from './Interfaces/IAuthUser';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class AuthService {
   private user: IAuthUser = {
     name: 'Alex',
     lastname: 'Smith',
-    isAdmin: null,
+    isAdmin: false,
   }
 
   public loggedAsAdmin() {

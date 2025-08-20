@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { IUser } from '../../Interfaces/user.interface';
+import { IUser } from '../../Interfaces/IUser';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from '../edit-user-dialog/edit-user-dialog.component';
 import { RemovePhoneDashes } from '../user-pipe/user-pipe.component';

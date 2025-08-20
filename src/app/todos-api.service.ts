@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { ITodo } from './Interfaces/todo.interface';
+import { ITodo } from './Interfaces/ITodo';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
